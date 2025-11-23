@@ -1,0 +1,1090 @@
+/* ============================================
+   Shiva Temple Website - Traditional Design
+   ============================================ */
+
+/* Root Variables */
+:root {
+    --saffron: #ff3333;
+    --saffron-dark: #cc6300;
+    --saffron-light: #FFB366;
+    --white: #FFFFFF;
+    --gold: #FFD700;
+    --gold-dark: #DAA520;
+    --red: #5f0517;
+    --red-dark: #750f0f;
+    --dark-gray: #2C2C2C;
+    --light-gray: #F5F5F5;
+    --medium-gray: #888888;
+    --font-devanagari: 'Noto Sans Devanagari', sans-serif;
+    --font-traditional: 'Playfair Display', serif;
+    --font-tamil: 'Noto Sans Tamil', sans-serif;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-traditional);
+    line-height: 1.6;
+    color: var(--dark-black);
+    background-color: #2C2C2C;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    padding: 15px 0;
+    margin-top: 0;
+}
+
+.nav-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.logo-image {
+    margin-right: auto;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: var(--white);
+    padding: 3px;
+    border: 4px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.sanskrit {
+    font-size: 1.8rem;
+    font-family: var(--font-devanagari);
+}
+
+.temple-name {
+    font-family: var(--font-traditional);
+    
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: var(--gold);
+    transition: width 0.5s ease;
+}
+
+.nav-link:hover {
+    color: var(--gold);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--gold);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+
+.section {
+    padding: 80px 0;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.hero-slider {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sanskrit-medium {
+    font-family: var(--font-devanagari);
+    font-size: 2.5rem;
+    color: var(--saffron-dark);
+    font-weight: 700;
+}
+
+.english-subtitle {
+    font-size: 2rem;
+    color: var(--dark-gray);
+    font-weight: 700;
+    font-family: var(--font-traditional);
+}
+
+.sanskrit-large {
+    font-family: var(--font-devanagari);
+    font-size: 4rem;
+    color: var(--saffron-dark);
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Decorative Border */
+.decorative-border {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--saffron) 0%, var(--gold) 50%, var(--saffron) 100%);
+    margin: 30px auto;
+    position: relative;
+}
+
+.decorative-border::before,
+.decorative-border::after {
+    content: '🕉️';
+    position: absolute;
+    top: -15px;
+    font-size: 1.5rem;
+}
+
+.decorative-border::before {
+    left: -30px;
+}
+
+.decorative-border::after {
+    right: -30px;
+}
+
+/* ============================================
+   Welcome Section
+   ============================================ */
+
+.welcome-section {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 153, 51, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+    text-align: left
+}
+
+.welcome-content {
+    max-width: 800px;
+    margin: 015 auto;
+}
+
+.main-title {
+    scroll-margin-left: var(--font-tamil);
+}
+
+.english-title {
+    font-size: 3rem;
+    color: var(--dark-gray);
+    font-weight: 700;
+    display: block;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* ============================================
+   Pooja Time Section
+   ============================================ */
+
+.pooja-section {
+    background-color: var(--light-gray);
+}
+
+.pooja-table-container {
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: var(--white);
+}
+
+.pooja-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+
+.pooja-table thead {
+    background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
+    color: var(--white);
+}
+
+.pooja-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.pooja-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.pooja-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.pooja-table tbody tr:hover {
+    background-color: rgba(255, 153, 51, 0.1);
+}
+
+.pooja-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ============================================
+   Festival Section
+   ============================================ */
+
+.festival-section {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+}
+
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.festival-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.festival-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 153, 51, 0.3);
+    border-color: var(--saffron);
+}
+
+.festival-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.festival-card h3 {
+    color: var(--saffron-dark);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: var(--font-traditional);
+}
+
+.festival-date {
+    color: var(--gold-dark);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.festival-description {
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Tamil Calendar Section
+   ============================================ */
+
+.calendar-section {
+    background-color: var(--light-gray);
+}
+
+.calendar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--saffron);
+}
+
+.calendar-nav-btn {
+    background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
+    color: var(--white);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-nav-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 153, 51, 0.4);
+}
+
+.calendar-month-year {
+    font-size: 1.5rem;
+    color: var(--saffron-dark);
+    font-weight: 700;
+    font-family: var(--font-traditional);
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.calendar-day-header {
+    text-align: center;
+    padding: 15px 5px;
+    font-weight: 700;
+    color: var(--saffron-dark);
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    background: var(--light-gray);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 80px;
+}
+
+.calendar-day.empty {
+    background: transparent;
+    border: none;
+}
+
+.calendar-day:hover:not(.empty) {
+    background: rgba(255, 153, 51, 0.1);
+    border-color: var(--saffron);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(255, 153, 51, 0.2);
+}
+
+.calendar-day.today {
+    background: linear-gradient(135deg, var(--saffron-light) 0%, var(--gold) 100%);
+    border-color: var(--saffron-dark);
+    font-weight: 700;
+}
+
+.calendar-day.has-festival {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.15) 0%, rgba(255, 215, 0, 0.15) 100%);
+    border-color: var(--gold);
+}
+
+.day-number {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 4px;
+}
+
+.calendar-day.today .day-number {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.festival-info {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 4px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.festival-name {
+    display: block;
+    color: var(--saffron-dark);
+    font-weight: 700;
+    font-family: 'Noto Sans Tamil', sans-serif;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calendar-day.today .festival-name {
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.festival-legend {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--saffron);
+    margin-top: 20px;
+}
+
+.festival-legend h4 {
+    color: var(--saffron-dark);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-weight: 700;
+}
+
+.festival-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.festival-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 153, 51, 0.2);
+    color: var(--medium-gray);
+    font-family: 'Noto Sans Tamil', sans-serif;
+    line-height: 1.6;
+}
+
+.festival-list li:last-child {
+    border-bottom: none;
+}
+
+.fest-date {
+    display: inline-block;
+    background: var(--saffron);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-right: 10px;
+    min-width: 35px;
+    text-align: center;
+}
+
+.festival-legend p {
+    color: var(--medium-gray);
+    font-family: 'Noto Sans Tamil', sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ============================================
+   Photos Section
+   ============================================ */
+
+.photos-section {
+    background-color: var(--light-gray);
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.photo-item {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover .gallery-image {
+    transform: scale(1.1);
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--saffron-light) 0%, var(--gold) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.photo-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 20px);
+}
+
+.photo-text {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   About Temple Section
+   ============================================ */
+
+.about-section {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feature-item {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--saffron);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.feature-item h4 {
+    color: var(--saffron-dark);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-family: var(--font-traditional);
+}
+
+.feature-item p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Contact Section
+   ============================================ */
+
+.contact-section {
+    background-color: var(--black);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.contact-item {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--saffron);
+}
+
+.contact-item h3 {
+    color: var(--saffron-dark);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-family: var(--font-traditional);
+}
+
+.contact-item p {
+    color: var(--medium-black);
+    line-height: 1.8;
+}
+
+.contact-form-container {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--saffron-dark);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 2px solid var(--light-gray);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--saffron);
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-traditional);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 153, 51, 0.4);
+}
+
+/* ============================================
+   Donation Section
+   ============================================ */
+
+.donation-section {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+}
+
+.donation-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.donation-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.donation-text {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.sanskrit-quote {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--gold);
+}
+
+.sanskrit-quote .sanskrit-medium {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--saffron-dark);
+}
+
+.quote-translation {
+    font-style: italic;
+    color: var(--medium-gray);
+    font-size: 1.1rem;
+}
+
+.donation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.donation-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid var(--saffron);
+    transition: transform 0.3s ease;
+}
+
+.donation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 153, 51, 0.3);
+}
+
+.donation-card h3 {
+    color: var(--saffron-dark);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: var(--font-traditional);
+}
+
+.donation-card p {
+    color: var(--medium-gray);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.bank-details {
+    text-align: left;
+    background: var(--light-gray);
+    padding: 20px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+.donation-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-traditional);
+    margin-top: 10px;
+}
+
+.donation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 153, 51, 0.4);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, #1a1a1a 100%);
+    color: var(--white);
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-family: var(--font-traditional);
+}
+
+.footer-section p {
+    color: var(--medium-gray);
+    line-height: 1.8;
+}
+
+.sanskrit-footer {
+    font-family: var(--font-devanagari);
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-top: 10px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--medium-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--medium-gray);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        padding: 15px 0;
+    }
+
+    .sanskrit-large {
+        font-size: 2.5rem;
+    }
+
+    .english-title {
+        font-size: 2rem;
+    }
+
+    .sanskrit-medium {
+        font-size: 1.8rem;
+    }
+
+    .english-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .festival-grid,
+    .donation-options {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-text,
+    .donation-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .sanskrit-large {
+        font-size: 2rem;
+    }
+
+    .english-title {
+        font-size: 1.5rem;
+    }
+
+    .pooja-table {
+        font-size: 0.9rem;
+    }
+
+    .pooja-table th,
+    .pooja-table td {
+        padding: 10px;
+    }
+
+    .calendar-container {
+        padding: 15px;
+    }
+
+    .calendar-month-year {
+        font-size: 1.2rem;
+    }
+
+    .calendar-day {
+        min-height: 60px;
+        padding: 5px;
+    }
+
+    .day-number {
+        font-size: 0.9rem;
+    }
+
+    .festival-info {
+        font-size: 0.65rem;
+    }
+
+    .calendar-day-header {
+        padding: 10px 3px;
+        font-size: 0.85rem;
+    }
+}
+

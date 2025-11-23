@@ -1,0 +1,768 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>விசாலாட்சி சமேத விஸ்வநாதர் சிவன் ஆலயம் - Shivan Temple</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft_terracotta': { DEFAULT: '#D2B48C', 600: '#DBC3A3', 700: '#E4D2BA', 800: '#EDE1D1', 900: '#F6F0E8' },
+                        'warm_brown': { DEFAULT: '#8B7355', 600: '#A58F77' },
+                        'muted_gold': { DEFAULT: '#B8860B', 600: '#E6A50D' },
+                        'dusty_blue': { DEFAULT: '#6B8CAE' },
+                        'cream_white': { DEFAULT: '#FFF8DC', 600: '#FFF9E3', 700: '#FFFBEA', 800: '#FFFCF1', 900: '#FFFEF8' },
+                        'deep_maroon': { DEFAULT: '#900c3f', 600: '#b8105a' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Playfair+Display:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .glass-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .top-scroller-sticky { position: sticky; top: 0; z-index: 1000; background: linear-gradient(to right, #900c3f, #b8860b, #6b8cae); overflow: hidden; white-space: nowrap; padding: 12px 0; cursor: pointer; }
+        .top-scroller-content { display: inline-block; animation: scroll-left 100s linear infinite; padding-left: 100%; }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        .event-badge { display: inline-block; margin: 0 15px; padding: 6px 14px; border-radius: 9999px; background-color: rgba(255, 255, 255, 0.1); color: white; font-size: 0.9rem; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .top-scroller-sticky.is-paused .top-scroller-content { animation-play-state: paused; }
+        @media (hover: hover) and (pointer: fine) { .top-scroller-sticky:hover .top-scroller-content { animation-play-state: paused; } }
+        .slide { opacity: 0; position: absolute; inset: 0; transition: opacity 1s ease-in-out; }
+        .slide.active { opacity: 1; }
+    </style>
+</head>
+
+<audio controls auto loop>
+  <source src="H:\www\web2\Music\Om Namah Shivaya.mp3" type="audio/ogg">
+  <source src="H:\www\web2\Music\Om Namah Shivaya.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+
+<body class="bg-gradient-to-br from-cream_white via-cream_white-600 to-soft_terracotta-900 min-h-screen">
+    <!-- Top Scrolling Banner -->
+    <div class="top-scroller-sticky">
+        <div class="top-scroller-content">
+            <span class="event-badge">📌 நாளை: பிரதோஷம்* (06:00 PM - 03/11/2025)</span>
+            <span class="event-badge">📌 இன்னும் 5 நாட்கள்: ஐப்பசி வெள்ளி* (11:30 AM - 07/11/2025)</span>
+            <span class="event-badge">📌 இன்னும் 15 நாட்கள்: பிரதோஷம்* (06:00 PM - 17/11/2025)</span>
+            <span class="event-badge">📌 இன்னும் 58 நாட்கள்: சுவர்கவாயிலேகாதசி* (06:00 PM - 30/12/2025)</span>
+            <span class="event-badge">📌 நாளை: பிரதோஷம்* (06:00 PM - 03/11/2025)</span>
+            <span class="event-badge">📌 இன்னும் 5 நாட்கள்: ஐப்பசி வெள்ளி* (11:30 AM - 07/11/2025)</span>
+            <span class="event-badge">📌 இன்னும் 15 நாட்கள்: பிரதோஷம்* (06:00 PM - 17/11/2025)</span>
+            <span class="event-badge">📌 இன்னும் 58 நாட்கள்: சுவர்கவாயிலேகாதசி* (06:00 PM - 30/12/2025)</span>
+        </div>
+    </div>
+            
+    
+    <!-- Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Replace this URL with your own Shiva logo image -->
+                <!-- Option 1: Use your own image from images folder: src="images/shiva-logo.png" -->
+                <!-- Option 2: Use online image URL -->
+                <img src="images/logo.png" alt="Temple Logo" class="logo-image"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span class="sanskrit" style="display:none;">ॐ</span>
+                <span class="temple-name">அருள்மிகு விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில்</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#welcome" class="nav-link">முகப்பு</a></li>
+                <li><a href="#pooja-time" class="nav-link">பூஜைகள்</a></li>
+                <li><a href="#festival" class="nav-link">வரவிருக்கும் பூஜைகள்</a></li>
+                <li><a href="#photos" class="nav-link">படத்தொகுப்பு</a></li>
+                <li><a href="#contact" class="nav-link">தொடர்புகளுக்கு</a></li>
+                <li><a href="#abouttemple" class="nav-link">எங்களைப் பற்றி</a></li>
+                 <li><a href="#donation" class="nav-link">Donation</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Slider Section -->
+    <section id="welcome" class="hero-slider relative h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 z-0"></div>
+        
+        <div class="slide active absolute inset-0 transition-opacity duration-1000 ease-in-out">
+            <img src="images/Calender sivan kovil 01.jpg" alt="Temple calendar image 1" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 z-10"></div>
+            <div class="absolute inset-0 flex items-center justify-center z-20 px-4">
+                <div class="glass-card p-6 md:p-10 rounded-2xl shadow-2xl text-center bg-white/10 backdrop-blur-md text-white max-w-2xl space-y-4">
+                    <h2 class="text-3xl md:text-4xl font-bold">சதுர்த்தி விரதம்*</h2>
+                    <p class="text-lg">அருள்மிகு விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில், Plaisir இல் வரும் நவம்பர் 24ஆம் தேதி  சதுர்த்தி பூஜை சிறப்பாக நடைபெறும். இந்நாளில் விநாயக பெருமானுக்கு அபிஷேகம், தீபாராதனை நடைபெறும். பக்தர்கள் விரதமிருந்து பங்கேற்பது பாவநிவிர்த்தி, ஆரோக்கியம், அமைதி, வளம் ஆகியவற்றை அருள்புரியும். மாலை நேரத்தில் 18.00 மணிக்கு அபிஷேகம், பின்னர் 19.00 மணிக்கு சிறப்பு பூஜை நடைபெறும். 🌺 ஓம் நமசிவாயா! 🌺</p>
+                    <p class="text-lg mt-3"></p>
+                    <p class="text-lg">🕒 18:00 – இரவு</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out">
+            <img src="images/Calender sivan kovil 03.jpg" alt="Temple calendar image 2" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 z-10"></div>
+            <div class="absolute inset-0 flex items-center justify-center z-20 px-4">
+                <div class="glass-card p-6 md:p-10 rounded-2xl shadow-2xl text-center bg-white/10 backdrop-blur-md text-white max-w-2xl space-y-4">
+                    <h2 class="text-3xl md:text-4xl font-bold">ஐப்பசி வெள்ளி*</h2>
+                    <p class="text-lg"><strong>பூஜை விபரம்:</strong> அருள்மிகு <strong>விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில், Plaisir</strong> இல் வரும் <strong>நவம்பர் 7 ஆம் தேதி (ஐப்பசி வெள்ளி)</strong> சிறப்பு பூஜை நடைபெறும். காலை <strong>11.30 மணிக்கு அபிஷேகம்</strong>, பின்னர் <strong>12.30 மணிக்கு சிறப்பு பூஜை</strong> நடைபெறும். பக்தர்களுக்காக அன்றைய தினம் <strong>அன்னதானம்</strong> வழங்கப்படும். 🌸</p>
+                    <p class="text-lg mt-3">🗓️ நவம்பர் 07, 2025</p>
+                    <p class="text-lg">🕒 11:30 – காலை</p>
+                </div>
+            </div>
+        </div>
+        
+        <button id="prev-slide" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 text-white p-3 rounded-full hover:bg-white/40 text-2xl font-bold">
+            ‹
+        </button>
+        <button id="next-slide" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 text-white p-3 rounded-full hover:bg-white/40 text-2xl font-bold">
+            ›
+        </button>
+        
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out">
+            <img src="images/Calender sivan kovil copy.jpg" alt="Temple calendar image 3" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 z-10"></div>
+            <div class="absolute inset-0 flex items-center justify-center z-20 px-4">
+                <div class="glass-card p-6 md:p-10 rounded-2xl shadow-2xl text-center bg-white/10 backdrop-blur-md text-white max-w-2xl space-y-4">
+                    <h2 class="text-3xl md:text-4xl font-bold">பிரதோஷம்*</h2>
+                    <p class="text-lg">அருள்மிகு விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில், Plaisir இல் வரும் நவம்பர் 17ஆம் தேதி பிரதோஷ பூஜை சிறப்பாக நடைபெறும். இந்நாளில் சிவபெருமானுக்கு அபிஷேகம், தீபாராதனை நடைபெறும். மாலை நேரத்தில் 6.00 மணிக்கு அபிஷேகம், பின்னர் 7.00 மணிக்கு பிரதோஷ சிறப்பு பூஜை நடைபெறும். 🌺 ஓம் நமசிவாயா! 🌺</p>
+                    <p class="text-lg mt-3">🗓️ நவம்பர் 17, 2025</p>
+                    <p class="text-lg">🕒 18:00 – இரவு</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out">
+            <img src="images/Calender sivan kovil02.jpg" alt="Temple calendar image 4" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 z-10"></div>
+            <div class="absolute inset-0 flex items-center justify-center z-20 px-4">
+                <div class="glass-card p-6 md:p-10 rounded-2xl shadow-2xl text-center bg-white/10 backdrop-blur-md text-white max-w-2xl space-y-4">
+                    <h2 class="text-3xl md:text-4xl font-bold">சுவர்கவாயிலேகாதசி*</h2>
+                    <p class="text-lg">பூஜை விபரம்: அருள்மிகு விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில், Plaisir இல் டிசம்பர் 30, 2025 அன்று சுவர்கவாயிலேகாதசியை முன்னிட்டு சிறப்பு பூஜை நடைபெறும். மாலை 6.00 மணிக்கு மகாவிஷ்ணுவுக்கு அபிஷேகம், பின்னர் 7.00 மணிக்கு விசேட பூஜை நடைபெறும்.</p>
+                    <p class="text-lg mt-3">🗓️ டிசம்பர் 30, 2025</p>
+                    <p class="text-lg">🕒 18:00 – இரவு</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex gap-2">
+            <button class="slide-indicator w-3 h-3 rounded-full bg-white" data-slide="0"></button>
+            <button class="slide-indicator w-3 h-3 rounded-full bg-white/50" data-slide="1"></button>
+            <button class="slide-indicator w-3 h-3 rounded-full bg-white/50" data-slide="2"></button>
+            <button class="slide-indicator w-3 h-3 rounded-full bg-white/50" data-slide="3"></button>
+        </div>
+    </section>
+
+    <!-- Temple Status & Pooja Times Section -->
+    <section id="pooja-time" class="py-12 bg-gradient-to-r from-[#fffdf4] to-[#fefae8]">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Temple Status Card -->
+                <div class="glass-card p-6 rounded-xl shadow-xl text-center flex flex-col justify-center">
+                    <h2 class="text-xl font-bold text-[#800020] mb-2">Temple Status</h2>
+                    <div id="temple-status-indicator" class="w-4 h-4 rounded-full bg-green-600 mx-auto mb-2"></div>
+                    <p id="temple-status-text" class="text-lg font-semibold text-green-700 mb-2">🕉️ OPEN</p>
+                    <p class="text-sm text-gray-600">
+                        <span>Current Time:</span>
+                        <span id="current-time" class="font-semibold text-[#800020]"></span>
+                    </p>
+                    <p class="text-sm text-gray-600 mt-1">
+                        <span>Next Pooja:</span>
+                        <span id="next-pooja-time" class="font-semibold text-[#6B4226]"></span>
+                    </p>
+                </div>
+                
+                <!-- Daily Pooja Times -->
+                <div class="lg:col-span-2 glass-card p-6 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold text-center text-[#800020] mb-6">Daily Pooja Times</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="group text-center p-4 rounded-xl bg-white/70 transition-all duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:shadow-2xl">
+                            <div class="bg-gradient-to-r from-[#800020] to-[#a67c00] text-white p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                                <span class="text-2xl">🌅</span>
+                            </div>
+                            <h4 class="font-bold text-[#800020]">Abhishekam</h4>
+                            <p class="text-xl font-bold text-[#6B4226]">11:30 AM</p>
+                        </div>
+                        
+                        <div class="group text-center p-4 rounded-xl bg-white/70 transition-all duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:shadow-2xl">
+                            <div class="bg-gradient-to-r from-[#87a3b8] to-[#6B4226] text-white p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                                <span class="text-2xl">☀️</span>
+                            </div>
+                            <h4 class="font-bold text-[#800020]">Noon Pooja</h4>
+                            <p class="text-xl font-bold text-[#6B4226]">12:00 PM</p>
+                        </div>
+                        
+                        <div class="group text-center p-4 rounded-xl bg-white/70 transition-all duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:shadow-2xl">
+                            <div class="bg-gradient-to-r from-[#6B4226] to-[#d2996b] text-white p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                                <span class="text-2xl">🌙</span>
+                            </div>
+                            <h4 class="font-bold text-[#800020]">Evening Pooja</h4>
+                            <p class="text-xl font-bold text-[#6B4226]">18:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center text-sm text-black-600 italic">
+                        Pooja times may change on special festival days
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Poojas Section -->
+    <section id="festival" class="py-16 bg-gradient-to-r from-cream_white-600 to-cream_white-700">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-11">
+                <h2 class="text-4xl font-bold bg-gradient-to-r from-deep_maroon to-warm_brown bg-clip-text text-transparent mb-4">
+                    வரவிருக்கும் பூஜைகள் / Upcoming Poojas
+                </h2>
+                <p></p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join us for these sacred ceremonies and festivals</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+             
+                
+                
+ <!-- Pooja Card 2 -->
+                <div class="pooja-card p-6 rounded-2xl shadow-xl text-center bg-[rgba(230,210,180,0.3)] backdrop-blur-sm border-l-[3px] border-deep_maroon hover:scale-[1.01] transition-transform duration-300">
+                    <h3 class="text-lg font-bold text-deep_maroon mb-2 h-14">ஐப்பசி வெள்ளி*</h3>
+                    <p class="text-warm_brown font-semibold mb-2">07 November 2025 – <span>இன்னும் 5 நாட்களில்</span></p>
+                    <p class="text-sm text-gray-700 mb-2">🕒 நேரம்: 11:30</p>
+                    <button onclick="toggleDescription('desc-1')" class="mt-2 inline-flex items-center gap-2 bg-gradient-to-r from-muted_gold to-warm_brown text-white px-4 py-1.5 text-sm font-medium rounded-full shadow hover:from-deep_maroon hover:to-muted_gold transition-all">
+                        ℹ️ குறிப்பு
+                    </button>
+                    <div id="desc-1" class="hidden mt-3 text-left bg-[#fdfbf8] border-l-4 border-[#e4572e] text-sm text-gray-800 p-3 rounded-md leading-relaxed">
+                        <strong>பூஜை விபரம்:</strong> அருள்மிகு <strong>விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில், Plaisir</strong> இல் வரும் <strong>நவம்பர் 7 ஆம் தேதி (ஐப்பசி வெள்ளி)</strong> சிறப்பு பூஜை நடைபெறும். காலை <strong>11.30 மணிக்கு அபிஷேகம்</strong>, பின்னர் <strong>12.30 மணிக்கு சிறப்பு பூஜை</strong> நடைபெறும். பக்தர்களுக்காக அன்றைய தினம் <strong>அன்னதானம்</strong> வழங்கப்படும். 🌸
+                    </div>
+                </div>
+                
+                <!-- Pooja Card 3 -->
+                <div class="pooja-card p-6 rounded-2xl shadow-xl text-center bg-[rgba(230,210,180,0.3)] backdrop-blur-sm border-l-[3px] border-deep_maroon hover:scale-[1.01] transition-transform duration-300">
+                    <h3 class="text-lg font-bold text-deep_maroon mb-2 h-14">பிரதோஷம்*</h3>
+                    <p class="text-warm_brown font-semibold mb-2">17 November 2025 – <span>இன்னும் 15 நாட்களில்</span></p>
+                    <p class="text-sm text-gray-700 mb-2">🕒 நேரம்: 18:00</p>
+                    <button onclick="toggleDescription('desc-2')" class="mt-2 inline-flex items-center gap-2 bg-gradient-to-r from-muted_gold to-warm_brown text-white px-4 py-1.5 text-sm font-medium rounded-full shadow hover:from-deep_maroon hover:to-muted_gold transition-all">
+                        ℹ️ குறிப்பு
+                    </button>
+                    <div id="desc-2" class="hidden mt-3 text-left bg-[#fdfbf8] border-l-4 border-[#e4572e] text-sm text-gray-800 p-3 rounded-md leading-relaxed">
+                        அருள்மிகு விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில், Plaisir இல் வரும் நவம்பர் 17ஆம் தேதி பிரதோஷ பூஜை சிறப்பாக நடைபெறும். இந்நாளில் சிவபெருமானுக்கு அபிஷேகம், தீபாராதனை நடைபெறும். மாலை நேரத்தில் 6.00 மணிக்கு அபிஷேகம், பின்னர் 7.00 மணிக்கு பிரதோஷ சிறப்பு பூஜை நடைபெறும். 🌺 ஓம் நமசிவாயா! 🌺
+                    </div>
+                </div>
+                
+                <!-- Pooja Card 4 -->
+                <div class="pooja-card p-6 rounded-2xl shadow-xl text-center bg-[rgba(230,210,180,0.3)] backdrop-blur-sm border-l-[3px] border-deep_maroon hover:scale-[1.01] transition-transform duration-300">
+                    <h3 class="text-lg font-bold text-deep_maroon mb-2 h-14">சுவர்கவாயிலேகாதசி*</h3>
+                    <p class="text-warm_brown font-semibold mb-2">30 December 2025 – <span>இன்னும் 58 நாட்களில்</span></p>
+                    <p class="text-sm text-gray-700 mb-2">🕒 நேரம்: 18:00</p>
+                    <button onclick="toggleDescription('desc-3')" class="mt-2 inline-flex items-center gap-2 bg-gradient-to-r from-muted_gold to-warm_brown text-white px-4 py-1.5 text-sm font-medium rounded-full shadow hover:from-deep_maroon hover:to-muted_gold transition-all">
+                        ℹ️ குறிப்பு
+                    </button>
+                    <div id="desc-3" class="hidden mt-3 text-left bg-[#fdfbf8] border-l-4 border-[#e4572e] text-sm text-gray-800 p-3 rounded-md leading-relaxed">
+                        பூஜை விபரம்: அருள்மிகு விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில், Plaisir இல் டிசம்பர் 30, 2025 அன்று சுவர்கவாயிலேகாதசியை முன்னிட்டு சிறப்பு பூஜை நடைபெறும். மாலை 6.00 மணிக்கு மகாவிஷ்ணுவுக்கு அபிஷேகம், பின்னர் 7.00 மணிக்கு விசேட பூஜை நடைபெறும்.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </html>
+<main class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-deep_maroon to-warm_brown bg-clip-text text-transparent mb-4" data-translate="calendar-title">
+                🗓️ Temple Calendar 🗓️
+            </h1>
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg" data-translate="calendar-subtitle">
+                Stay updated with our festivals, special events, and sacred celebrations.
+            </p>
+        </div>
+
+        <section>
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-deep_maroon via-muted_gold to-dusty_blue text-white p-4 sm:p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <button id="prev-month" class="bg-white/20 hover:bg-white/30 p-2 sm:p-3 rounded-full transition-all">
+                                <i data-lucide="chevron-left" class="h-6 w-6"></i>
+                            </button>
+                            <h2 id="current-month" class="text-xl sm:text-3xl font-bold text-center"></h2>
+                            <button id="next-month" class="bg-white/20 hover:bg-white/30 p-2 sm:p-3 rounded-full transition-all">
+                                <i data-lucide="chevron-right" class="h-6 w-6"></i>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center font-semibold">
+                            <div class="p-2 sm:p-3"><span class="hidden sm:inline" data-translate="sun">Sun</span><span class="sm:hidden">S</span></div>
+                            <div class="p-2 sm:p-3"><span class="hidden sm:inline" data-translate="mon">Mon</span><span class="sm:hidden">M</span></div>
+                            <div class="p-2 sm:p-3"><span class="hidden sm:inline" data-translate="tue">Tue</span><span class="sm:hidden">T</span></div>
+                            <div class="p-2 sm:p-3"><span class="hidden sm:inline" data-translate="wed">Wed</span><span class="sm:hidden">W</span></div>
+                            <div class="p-2 sm:p-3"><span class="hidden sm:inline" data-translate="thu">Thu</span><span class="sm:hidden">T</span></div>
+                            <div class="p-2 sm:p-3"><span class="hidden sm:inline" data-translate="fri">Fri</span><span class="sm:hidden">F</span></div>
+                            <div class="p-2 sm:p-3"><span class="hidden sm:inline" data-translate="sat">Sat</span><span class="sm:hidden">S</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2 sm:p-6">
+                        <div class="grid grid-cols-7 gap-1 sm:gap-2" id="calendar-grid">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<div id="event-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-cream_white-800 rounded-2xl shadow-2xl w-full max-w-md p-6 relative">
+        <button id="modal-close-btn" class="absolute top-4 right-4 text-deep_maroon hover:text-warm_brown">
+            <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+        <h3 id="modal-date" class="text-2xl font-bold text-deep_maroon mb-4"></h3>
+        <ul id="modal-events" class="space-y-2 text-warm_brown list-disc list-inside">
+            </ul>
+    </div>
+</div>
+
+<script>
+    const eventsData = {"2025-06":{"21":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"22":["\u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0 \u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8","\u0baa\u0bcd\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"24":["\u0b85\u0bae\u0bbe\u0bb5\u0bbe\u0b9a\u0bc8"],"28":["\u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"]},"2025-07":{"2":["\u0b86\u0ba9\u0bbf \u0b89\u0ba4\u0bcd\u0ba4\u0bbf\u0bb0\u0bae\u0bcd"],"6":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"8":["\u0baa\u0bcd\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"10":["\u0baa\u0bcc\u0bb0\u0bcd\u0ba3\u0bae\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"19":["\u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0 \u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8"],"20":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"22":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"24":["\u0b86\u0b9f\u0bbf \u0b85\u0bae\u0bbe\u0bb5\u0bbe\u0b9a\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"28":["\u0b86\u0b9f\u0bbf\u0baa\u0bcd\u0baa\u0bc2\u0bb0\u0bae\u0bcd"],"30":["\u0bb8\u0bb7\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"]},"2025-08":{"5":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"6":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"8":["\u0baa\u0bcc\u0bb0\u0bcd\u0ba3\u0bae\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"12":["\u0b9a\u0b99\u0bcd\u0b95\u0b9f\u0bb9\u0bb0 \u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"16":["\u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0 \u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8"],"19":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"20":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"22":["\u0b85\u0bae\u0bbe\u0bb5\u0bbe\u0b9a\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"26":["\u0bb5\u0bbf\u0ba8\u0bbe\u0baf\u0b95 \u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"28":["\u0bb8\u0bb7\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"]},"2025-09":{"2":["\u0b86\u0bb5\u0ba3\u0bbf \u0bae\u0bc2\u0bb2\u0bae\u0bcd"],"3":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"5":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"7":["\u0baa\u0bcc\u0bb0\u0bcd\u0ba3\u0bae\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"8":["\u0bae\u0bb9\u0bbe\u0bb3\u0baf \u0baa\u0b95\u0bcd\u0bb7\u0bae\u0bcd \u0b86\u0bb0\u0bae\u0bcd\u0baa\u0bae\u0bcd"],"10":["\u0b9a\u0b99\u0bcd\u0b95\u0b9f\u0bb9\u0bb0 \u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"12":["\u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0 \u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8"],"17":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"19":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"21":["\u0b85\u0bae\u0bbe\u0bb5\u0bbe\u0b9a\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd","\u0bae\u0bb9\u0bbe\u0bb3\u0baf\u0baa\u0b95\u0bcd\u0bb7\u0bae\u0bcd \u0bae\u0bc1\u0b9f\u0bbf\u0bb5\u0bc1"],"22":["\u0ba8\u0bb5\u0bb0\u0bbe\u0ba4\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4 \u0b86\u0bb0\u0bae\u0bcd\u0baa\u0bae\u0bcd"],"25":["\u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"27":["\u0bb8\u0bb7\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"28":["\u0bb8\u0bb0\u0bb8\u0bcd\u0bb5\u0ba4\u0bbf \u0baa\u0bc2\u0b9c\u0bbe\u0bb0\u0bae\u0bcd\u0baa\u0bae\u0bcd"]},"2025-10":{"1":["\u0b9a\u0bb0\u0bb8\u0bcd\u0bb5\u0ba4\u0bbf \u0baa\u0bc2\u0b9c\u0bc8 \/ \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0baa\u0bc2\u0b9c\u0bc8"],"2":["\u0bb5\u0bbf\u0b9c\u0baf\u0ba4\u0b9a\u0bae\u0bbf","\u0b95\u0bc7\u0ba4\u0bbe\u0bb0 \u0b95\u0bcc\u0bb0\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd \u0b86\u0bb0\u0bae\u0bcd\u0baa\u0bae\u0bcd"],"3":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"4":["\u0b9a\u0ba9\u0bbf\u0baa\u0bcd\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"6":["\u0baa\u0bcc\u0bb0\u0bcd\u0ba3\u0bae\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"10":["\u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0 \u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8\/ \u0b9a\u0b99\u0bcd\u0b95\u0b9f\u0bb9\u0bb0 \u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"17":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"18":["\u0b9a\u0ba9\u0bbf\u0baa\u0bcd\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"20":["\u0b85\u0bae\u0bbe\u0bb5\u0bbe\u0b9a\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd","\u0b95\u0bc7\u0ba4\u0bbe\u0bb0\u0b95\u0bcc\u0bb0\u0bbf \u0b95\u0bbe\u0baa\u0bcd\u0baa\u0bc1","\u0ba4\u0bc0\u0baa\u0bbe\u0bb5\u0bb3\u0bbf"],"22":["\u0b95\u0ba8\u0bcd\u0ba4 \u0b9a\u0bb7\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4 \u0b86\u0bb0\u0bae\u0bcd\u0baa\u0bae\u0bcd"],"25":["\u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"27":["\u0b95\u0ba8\u0bcd\u0ba4 \u0b9a\u0bb7\u0bcd\u0b9f\u0bbf \u0bae\u0bc1\u0b9f\u0bbf\u0bb5\u0bc1"]},"2025-11":{"1":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"3":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"5":["\u0baa\u0bcc\u0bb0\u0bcd\u0ba3\u0bae\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"6":["\u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0 \u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8"],"8":["\u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"15":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"17":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"19":["\u0b85\u0bae\u0bbe\u0bb5\u0bbe\u0b9a\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"24":["\u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"26":["\u0bb8\u0bb7\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"]},"2025-12":{"1":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"2":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"3":["\u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd- \u0b95\u0bc1\u0bae\u0bbe\u0bb0\u0bbe\u0bb2\u0baf \u0ba4\u0bc0\u0baa\u0bae\u0bcd"],"4":["\u0b9a\u0bb0\u0bcd\u0bb5\u0bbe\u0bb2\u0baf \u0ba4\u0bc0\u0baa\u0bae\u0bcd- \u0bb5\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0ba4\u0bc0\u0baa\u0bae\u0bcd"],"5":["\u0bb5\u0bbf\u0ba8\u0bbe\u0baf\u0b95\u0bb5\u0bbf\u0bb0\u0ba4\u0bbe\u0bb0\u0bae\u0bcd\u0baa\u0bae\u0bcd"],"7":["\u0b9a\u0b99\u0bcd\u0b95\u0b9f\u0bb9\u0bb0 \u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"15":["\u0b8f\u0b95\u0bbe\u0ba4\u0b9a\u0bbf"],"17":["\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"],"19":["\u0b85\u0bae\u0bbe\u0bb5\u0bbe\u0b9a\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"23":["\u0b9a\u0ba4\u0bc1\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf"],"25":["\u0ba4\u0bbf\u0bb0\u0bc1\u0bb5\u0bc6\u0bae\u0bcd\u0baa\u0bbe\u0bb5\u0bc8  \u0b86\u0bb0\u0bae\u0bcd\u0baa\u0bae\u0bcd","\u0bb5\u0bbf\u0ba8\u0bbe\u0baf\u0b95\u0b9a\u0bb7\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd"],"30":["\u0b9a\u0bc1\u0bb5\u0bb0\u0bcd\u0b95\u0bb5\u0bbe\u0baf\u0bbf\u0bb2\u0bc7\u0b95\u0bbe\u0ba4\u0b9a\u0bbf "],"31":["\u0b95\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bc8 \u0bb5\u0bbf\u0bb0\u0ba4\u0bae\u0bcd","\u0baa\u0bbf\u0bb0\u0ba4\u0bcb\u0bb7\u0bae\u0bcd"]}};
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const calendarGrid = document.getElementById('calendar-grid');
+        const modal = document.getElementById('event-modal');
+        const modalDate = document.getElementById('modal-date');
+        const modalEvents = document.getElementById('modal-events');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+
+        // --- Calendar Generation Logic (with modifications) ---
+        const today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+
+        function generateCalendarDays() {
+            // (omitted for brevity - same as before)
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            document.getElementById('current-month').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+            calendarGrid.innerHTML = '';
+            for (let i = 0; i < firstDayOfMonth; i++) {
+                calendarGrid.insertAdjacentHTML('beforeend', '<div class="h-20 sm:h-28"></div>');
+            }
+
+            const monthKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}`;
+            const monthlyEvents = eventsData[monthKey] || {};
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                let dayCellClasses = 'h-20 sm:h-28 p-1 sm:p-2 text-left border border-gray-200 flex flex-col transition-colors';
+                let eventsHtml = '';
+                let dayDataAttributes = '';
+
+                if (monthlyEvents[day]) {
+                    dayCellClasses += ' bg-muted_gold/20 border-deep_maroon cursor-pointer hover:bg-muted_gold/40';
+                    monthlyEvents[day].forEach(eventName => {
+                        eventsHtml += `<div class="text-xs text-white bg-deep_maroon rounded px-1 mt-1 truncate">${eventName}</div>`;
+                    });
+                    // Store event data on the cell for the popup
+                    const fullDate = new Date(currentYear, currentMonth, day).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                    dayDataAttributes = `data-date="${fullDate}" data-events='${JSON.stringify(monthlyEvents[day])}'`;
+                }
+                
+                if (day === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
+                    dayCellClasses += ' bg-dusty_blue/20';
+                }
+
+                const dayHtml = `
+                    <div class="${dayCellClasses}" ${dayDataAttributes}>
+                        <div class="font-bold text-deep_maroon text-sm sm:text-base">${day}</div>
+                        <div class="flex-grow overflow-y-auto pointer-events-none">${eventsHtml}</div>
+                    </div>`;
+                calendarGrid.insertAdjacentHTML('beforeend', dayHtml);
+            }
+        }
+        
+        // --- Modal and Navigation Logic ---
+        document.getElementById('prev-month').addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            generateCalendarDays();
+        });
+
+        document.getElementById('next-month').addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            generateCalendarDays();
+        });
+
+        // Event listener for opening the modal
+        calendarGrid.addEventListener('click', (event) => {
+            const dayCell = event.target.closest('[data-events]');
+            if (dayCell) {
+                const date = dayCell.dataset.date;
+                const events = JSON.parse(dayCell.dataset.events);
+                
+                modalDate.textContent = date;
+                modalEvents.innerHTML = ''; // Clear previous events
+                events.forEach(eventName => {
+                    modalEvents.innerHTML += `<li>${eventName}</li>`;
+                });
+                
+                modal.classList.remove('hidden');
+            }
+        });
+
+        // Listeners for closing the modal
+        const closeModal = () => modal.classList.add('hidden');
+        modalCloseBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        generateCalendarDays(); // Initial call
+    });
+</script>
+
+    <!-- Photos Section -->
+    <section id="photos" class="section photos-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="sanskrit-medium"></span>
+                <span class="english-subtitle">Temple Photos</span>
+            </h2>
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="images/Calender sivan kovil 01.jpg" alt="Sivan Kovil calendar photo 1" class="gallery-image">
+                </div>
+                <div class="photo-item">
+                    <img src="images/Calender sivan kovil 03.jpg" alt="Sivan Kovil calendar photo 2" class="gallery-image">
+                </div>
+                <div class="photo-item">
+                    <img src="images/Calender sivan kovil copy.jpg" alt="Sivan Kovil calendar photo 3" class="gallery-image">
+                </div>
+                <div class="photo-item">
+                    <img src="images/Calender sivan kovil02.jpg" alt="Sivan Kovil calendar photo 4" class="gallery-image">
+                </div>
+                <div class="photo-item">
+                    <img src="images/Kovil 01.jpg" alt="Kovil 01" class="gallery-image">
+        </div>
+    </section>
+
+    <!-- About Temple Section -->
+    <section id="AboutTemple" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="sanskrit-medium"></span>
+                <span class="english-subtitle">About the Temple</span>
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        ​இந்து மதம் தன் மெஞ்ஞானத்தின் மூலம் மக்களுக்கு மாயையை விலக்க பிரான்ஸ் Plaisir இல் அமைந்துள்ள  விசாலாட்சி  சமேத  காசி
+                        விஸ்வநாத சுவாமி சிவன் அருள் பாலிக்கின்றார் .
+                    </p>
+                    <p>
+                        பிரான்ஸ் Plaisir  விசாலாட்சி  சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில் ஆலயமானது புலம்பெயர்
+                        வாழ்வாயினும் அமிழ்தத்தை ஒத்த தமிழையும், சைவ சமயத்தையும்
+                    </p>
+                    <p>
+                        புலம்பெயர் வாழ்வாயினும் அமிழ்தத்தை ஒத்த தமிழையும், சைவத்தையும் தமிழரோடிணைந்த கலை, கலாச்சார, பண்பாட்டு நெறிமுறைகளை பாதுகாக்கும் நோக்கத்தில் நோக்கில் 09.09.2022
+                        அன்று ஆரம்பிக்கப்பட்டது, இன்றைய தினத்தில், இந்த ஆலயம் பிரான்சில் வாழும் தமிழ் சமூகத்தினருக்கும், வருகை தரும் அனைத்து இந்து பக்தர்களுக்கும் ஒரு நிலையான ஆன்மீகத் தளமாக விளங்குகிறது. 
+                        விஷேட பூஜைகள், திருவிழாக்கள், ஆன்மீக கருத்தரங்குகள், மற்றும் தமிழரின் பாரம்பரிய காலசாரத்தை சார்ந்த விழாக்கள் வழியாக, ஆலயம் தனது சேவைகளை விரிவுபடுத்தி வருகின்றது.  இந்து கலாச்சார மன்றம்.
+
+                    </p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">🕉️</span>
+                        <h4>தெய்வ அருள் கொண்டு துவங்கு</h4>
+                        <p>பயம் இல்லாமல் செயல் செய். பலனை இறைவன் அறிந்து அருள்வார்.🪔மேன்மை கொள் சைவ நீதி விளங்குக உலகமெல்லாம்.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📿</span>
+                        <h4>பக்தி மற்றும் பிரார்த்தனை</h4>
+                        <p>எம்பெருமானின்  அருளும், பக்தர்களின் அர்ப்பணிப்பும் கலந்து நிறைந்த எங்கள் திருத்தலத்தில், தெய்வீக சாந்தியும், ஆன்மீக ஒளியுமே பரவி நிற்கின்றன. பக்தியுடன் கடவுளை வழிபடுபவர்களுக்குத் தேவைகள் நிறைவேறும் பாக்கியமும், இருப்பதைப் பாதுகாத்தும் ஆசீர்வதிக்கிறார்கள் என்று வேதம் போதிக்கிறது.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🙏</span>
+                        <h4>பகவத்கீதை</h4>
+                        <p>"அதர்மம் தலைதூக்கும் ஒவ்வொரு யுகத்திலும்,தர்மத்தை நிலைநாட்ட,நான் மீண்டும் பிறக்கிறேன்."– ஸ்ரீ கிருஷ்ணர்
+
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="sanskrit-medium"></span>
+                <span class="english-subtitle">Contact Us</span>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Address</h3>
+                        <p>51 Rue de la Gare<br> Plaisir,78370 </p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <b>+33 6 64 17 00 46,   +33 6 51 57 21 22,  +33 6 23 12 54 11</b>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p>[Email Address]</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕐 Temple Hours</h3>
+                        <p>Morning OPEN 09.00 AM
+                            Pooja 12:00
+                            Close 14:00 PM
+                            <P>
+
+                            </P>
+                             EveningOpen 18:00 PM
+                            Pooja 19:00 PM
+                            Close  21:00 PM</p>
+
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation" class="section donation-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="sanskrit-medium">நன்கொடை</span>
+                <span class="english-subtitle">Donation</span>
+            </h2>
+            <div class="donation-content">
+                <div class="donation-intro">
+                    <p class="donation-text">
+                        உங்கள் தாராளமான நன்கொடைகள் கோயிலை பராமரிக்கவும், தினசரி பூஜைகளை நடத்தவும், திருவிழாக்களை ஏற்பாடு செய்யவும் எங்களுக்கு உதவுகின்றன. மற்றும் சமூகத்திற்கு சேவை செய்யுங்கள். பெரியதோ அல்லது சிறியதோ ஒவ்வொரு பங்களிப்பும் மிகவும் பாராட்டப்படுகிறது மற்றும் நமது புனித பாரம்பரியங்களைப் பாதுகாக்க உதவுகிறது எதிர்கால சந்ததியினருக்காக.
+                    </p>
+                    <div class="sanskrit-quote">
+                        <span class="sanskrit-medium">தர்மம் என்பது மிக உயர்ந்த நல்லொழுக்கம்</span>
+                        <p class="quote-translation">"Charity is the highest virtue"</p>
+                    </div>
+                </div>
+                <div class="donation-options">
+                    <div class="donation-card">
+                        <h3>💰 Online Donation</h3>
+                        <p>Make a secure online donation through our payment gateway</p>
+                        <button class="donation-btn">Donate Online</button>
+                    </div>
+                    <div class="donation-card">
+                        <h3>🏦 Bank Transfer</h3>
+                        <p>Bank Account Details:</p>
+                        <p class="bank-details">
+                            Account Name: [ASSOCIATION HINDOUISTES CULTUREL]<br>
+                            Bank: [LCL Banque]<br>
+                            IBAN: [FR44 3000 2089 6600 0007 0152 Q15]
+                        </p>
+                    </div>
+                    <div class="donation-card">
+                        <h3>💳 In-Person Donation</h3>
+                        <p>Visit the temple during temple hours to make a donation in person. We accept cash, checks,
+                            and digital payments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-40 bg-[#69052b] text-[#fefdf8]">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-1 text-center lg:text-left">
+                    <img src="images/logo.png" alt="Temple Footer Logo" width="200" height="200" class="mx-auto lg:mx-0 rounded-full shadow-2xl border-4 border-yellow-500 mb-4 object-cover" onerror="this.style.display='none';">
+                    <h3 class="text-xl font-bold mb-2">அருள்மிகு விசாலாட்சி சமேத காசி விஸ்வநாத சுவாமி சிவன் கோவில்</h3>
+                    <p class="text-sm">Shivan Temple - 78370,Plaisir, France</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#welcome" class="hover:text-yellow-400 transition">முகப்பு</a></li>
+                        <li><a href="#pooja-time" class="hover:text-yellow-400 transition">பூஜைகள்</a></li>
+                        <li><a href="#festival" class="hover:text-yellow-400 transition">வரவிருக்கும் பூஜைகள்</a></li>
+                        <li><a href="#photos" class="hover:text-yellow-400 transition">படத்தொகுப்பு</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Temple Hours</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>Morning: 09:00 AM - 14:00 PM</li>
+                        <li>Evening: 18:00 PM - 21:00 PM</li>
+                        <li class="italic text-yellow-500">* Timings may vary on special festival days</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>51 Rue de la Gare</li>
+                        <li>Plaisir, 78370, France</li>
+                        <li><a href="tel:+33664170046" class="underline hover:text-yellow-400">+33 6 64 17 00 46</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center border-t border-[#fefdf8]/20 py-4 text-sm mt-6">
+            <span>© 2025 விசாலாட்சி சமேத விஸ்வநாதர் சிவன் ஆலயம். All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Top Scroller Pause
+        document.addEventListener('DOMContentLoaded', () => {
+            const scroller = document.querySelector('.top-scroller-sticky');
+            if (scroller) {
+                scroller.addEventListener('click', () => {
+                    scroller.classList.toggle('is-paused');
+                });
+            }
+        });
+        
+        // Hero Slider
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            if (slides.length === 0) return;
+            
+            const indicators = document.querySelectorAll('.slide-indicator');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(dot => dot.classList.remove('bg-white'));
+                
+                slides[index].classList.add('active');
+                indicators[index].classList.add('bg-white');
+                
+                indicators.forEach((dot, i) => {
+                    if (i !== index) dot.classList.add('bg-white/50');
+                });
+                currentSlide = index;
+            }
+            
+            document.getElementById('next-slide')?.addEventListener('click', () => {
+                let next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            });
+            
+            document.getElementById('prev-slide')?.addEventListener('click', () => {
+                let prev = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prev);
+            });
+            
+            indicators.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+            
+            setInterval(() => {
+                let next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }, 8000);
+        });
+        
+        // Temple Status & Time
+        function updateTempleStatus() {
+            const now = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Paris"}));
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+            
+            const currentTimeEl = document.getElementById('current-time');
+            if (currentTimeEl) currentTimeEl.textContent = timeString;
+            
+            // Determine next pooja
+            let nextPooja = '';
+            if (hours < 11 || (hours === 11 && minutes < 30)) {
+                nextPooja = '11:30 AM - Abhishekam';
+            } else if (hours < 12 || (hours === 12 && minutes < 0)) {
+                nextPooja = '12:00 PM - Noon Pooja';
+            } else if (hours < 19) {
+                nextPooja = '7:00 PM - Evening Pooja';
+            } else {
+                nextPooja = '11:30 AM - Abhishekam (Tomorrow)';
+            }
+            const nextPoojaEl = document.getElementById('next-pooja-time');
+            if (nextPoojaEl) nextPoojaEl.textContent = nextPooja;
+            
+            // Temple status
+            const isOpen = (hours >= 9 && hours < 14) || (hours >= 18 && hours < 21);
+            const statusIndicator = document.getElementById('temple-status-indicator');
+            const statusText = document.getElementById('temple-status-text');
+            
+            if (statusIndicator && statusText) {
+                if (isOpen) {
+                    statusIndicator.className = 'w-4 h-4 rounded-full bg-green-600 mx-auto mb-2';
+                    statusText.textContent = '🕉️ OPEN';
+                    statusText.className = 'text-lg font-semibold text-green-700 mb-2';
+                } else {
+                    statusIndicator.className = 'w-4 h-4 rounded-full bg-red-600 mx-auto mb-2';
+                    statusText.textContent = '🔒 CLOSED';
+                    statusText.className = 'text-lg font-semibold text-red-700 mb-2';
+                }
+            }
+        }
+        
+        updateTempleStatus();
+        setInterval(updateTempleStatus, 60000); // Update every minute
+        
+        // Toggle Description
+        function toggleDescription(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.toggle('hidden');
+            }
+        }
+        window.toggleDescription = toggleDescription;
+    </script>
+</body>
+
+</html>
